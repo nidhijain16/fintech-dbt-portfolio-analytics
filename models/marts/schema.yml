@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: fct_portfolio_performance
+    description: "Portfolio performance fact table featuring cumulative balances and windowed trade metrics"
+    columns:
+      - name: trade_id
+        description: "Primary key"
+        tests:
+          - unique
+          - not_null
+
+      - name: user_id
+        description: "Investor user ID"
+        tests:
+          - not_null
+
+      - name: cumulative_shares_held
+        description: "Must be non-negative (short selling restricted in standard retail broker)"
+        tests:
+          - not_null
+
+      - name: user_trade_sequence
+        description: "Incremental integer starting at 1"
+        tests:
+          - not_null

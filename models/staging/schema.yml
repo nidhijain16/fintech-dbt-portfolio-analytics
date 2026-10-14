@@ -1,0 +1,64 @@
+version: 2
+
+models:
+  - name: stg_users
+    description: "Cleansed and validated user accounts from Scalable Broker & Wealth"
+    columns:
+      - name: user_id
+        description: "Primary key for users"
+        tests:
+          - unique
+          - not_null
+
+      - name: email
+        description: "Investor contact email address"
+        tests:
+          - not_null
+
+      - name: kyc_status
+        description: "BaFin/AML KYC compliance status"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['VERIFIED', 'PENDING', 'REJECTED']
+
+      - name: plan_tier
+        description: "Customer subscription plan (Free vs Prime Broker)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['FREE', 'PRIME', 'PRIME_PLUS']
+
+  - name: stg_trades
+    description: "Cleaned individual order executions from EIX, gettex, and Xetra"
+    columns:
+      - name: trade_id
+        description: "Unique trade transaction ID"
+        tests:
+          - unique
+          - not_null
+
+      - name: user_id
+        description: "Foreign key referencing stg_users"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_users')
+              field: user_id
+
+      - name: side
+        description: "Order side: BUY or SELL"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['BUY', 'SELL']
+
+      - name: price_eur
+        description: "Execution unit price in EUR"
+        tests:
+          - not_null
+
+      - name: gross_amount_eur
+        description: "Gross transaction volume (shares * price_eur)"
+        tests:
+          - not_null

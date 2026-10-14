@@ -1,0 +1,5 @@
+user_id,email,kyc_status,plan_tier,created_at
+usr_101,alex.mueller@example.de,VERIFIED,PRIME_PLUS,2024-01-10 08:30:00
+usr_102,sarah.schmidt@example.de,VERIFIED,FREE,2024-01-15 09:45:00
+usr_103,david.weber@example.de,PENDING,FREE,2024-02-01 11:20:00
+usr_104,elena.braun@example.de,VERIFIED,PRIME,2024-02-12 14:15:00
