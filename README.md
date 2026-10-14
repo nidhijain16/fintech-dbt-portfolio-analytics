@@ -1,6 +1,5 @@
-# 📊 Module 2: dbt Core & Advanced SQL Data Engineering
-
-> **Time Commitment:** Hour 3 of the 5-Hour Sprint  
+# dbt Core & Advanced SQL Data Engineering
+ 
 > **Target Mastery:** dbt Core (models, macros, `ref()`, DAG lineage, schema testing), Kimball Data Modeling (Staging vs Marts), and Senior-Level SQL Window Functions.
 
 ---
