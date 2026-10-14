@@ -9,7 +9,7 @@ if (-not $RepoUrl) {
     Write-Host "==========================================================" -ForegroundColor Cyan
     Write-Host "🚀 Push 02_dbt_fintech to GitHub" -ForegroundColor Cyan
     Write-Host "==========================================================" -ForegroundColor Cyan
-    $RepoUrl = Read-Host "Enter your GitHub repository URL (e.g., https://github.com/username/scalable-fintech-dbt.git)"
+    $RepoUrl = Read-Host "Enter your GitHub repository URL (e.g., https://github.com/nidhijain16/fintech-dbt-portfolio-analytics.git)"
 }
 
 if (-not $RepoUrl.Trim()) {
