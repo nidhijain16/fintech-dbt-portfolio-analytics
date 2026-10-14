@@ -1,8 +1,8 @@
-name: 'scalable_fintech_dbt'
+name: 'fintech_portfolio_dbt'
 version: '1.0.0'
 config-version: 2
 
-profile: 'scalable_analytics'
+profile: 'fintech_analytics'
 
 model-paths: ["models"]
 seed-paths: ["seeds"]
@@ -13,7 +13,7 @@ clean-targets:
   - "dbt_packages"
 
 models:
-  scalable_fintech_dbt:
+  fintech_portfolio_dbt:
     staging:
       +materialized: view
       +schema: staging
